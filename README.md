@@ -9,6 +9,7 @@ $ cd spack-mirror
 $ cd metis
 $ spec=$(\ls)
 $ loc=$(\ls -l $spec | sed -e 's/.*[ ]//')
-$ mv $(rm $spec && mv $loc $spec)
-$ cd spack-mirror && git commit -a -m "Adding <spec>" && git push
+$ rm $spec && mv $loc $spec
+$ cd ..
+$ git commit -a -m "Adding $spec" && git push
 ```
